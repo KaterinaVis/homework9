@@ -7,14 +7,23 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число до");
 int n = Convert.ToInt32(Console.ReadLine());
 
-int sum = 0;
-int number =
-SumNumber(n, m);
-// Console.Write(sum);
+int temp = m;
 
-void SumNumber(int n, int m)
+if (m > n) 
 {
-  if (count > n) return;
-  SumNumber(n, count + 1);
-  Console.Write(count + ",");
+  m = n; 
+  n = temp;
+}
+
+Sum(m, n, temp=0);
+
+void Sum(int m, int n, int sum)
+{
+  sum = sum + n;
+  if (n <= m)
+  {
+    Console.Write($"Сумма между элементами = {sum} ");
+    return;
+  }
+  Sum(m, n - 1, sum);
 }
