@@ -6,13 +6,13 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число n");
 int n = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine(Akkerman(m, n));
+Console.WriteLine(FunctionA(m, n));
 
-int Akkerman(int m, int n)
+int FunctionA(int m, int n)
 {
     int result = 0;
     if(m == 0) return result = n + 1;
-    if(m > 0 && n == 0) result = Akkerman(m - 1, 1);
-    if (m > 0 && n > 0) result = Akkerman(m - 1, Akkerman(m, n - 1));
+    if(m > 0 && n == 0) result = FunctionA(m - 1, 1);
+    if (m > 0 && n > 0) result = FunctionA(m - 1, FunctionA(m, n - 1));
     return result;
 }
